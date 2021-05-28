@@ -103,10 +103,10 @@ class EasyListViewState extends State<EasyListView> {
             itemBuilder: _itemBuilder,
           );
 
-    List<Widget?> children =
+    List<Widget> children =
         widget.scrollbarEnable ? [Scrollbar(child: listView)] : [listView];
-    if (widget.foregroundWidget != null) children.add(widget.foregroundWidget);
-    return Stack(children: children as List<Widget>);
+    if (widget.foregroundWidget != null) children.add(widget.foregroundWidget!);
+    return Stack(children: children);
   }
 
   ItemType _itemType(itemIndex, totalItemCount) {
